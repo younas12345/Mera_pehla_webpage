@@ -170,6 +170,75 @@ Ab apni `style.css` file kholo aur mobile responsive wale hisse (`@media`) ke **
     color: #2b2a2a;
     border: 2px solid rgb(53, 4, 232)
 }
+
+/* =========================================================
+   SERVICES SECTION KI CSS STYLING
+   ========================================================= */
+
+/* Poore section ka dabba aur uski khali jagah (Padding) */
+.services-section {
+    padding: 60px 20px;          /* Upar-neeche 60px aur left-right 20px ki andaruni khali jagah */
+    background-color: #ffffff;   /* Bilkul saaf sutra white background */
+    text-align: center;          /* Is section ke andar ka saara text center ho jaye */
+}
+
+/* Section ki badi heading ka style */
+.section-title {
+    font-size: 32px;             /* Heading ka size bada kiya */
+    color: #222222;              /* Dark black rang taaki door se parha jaye */
+    margin-bottom: 40px;         /* Heading ke neeche 40px ka gap taaki cards door rahein */
+}
+
+/* MAIN CONTAINER (BAAP): Jo cards ko control karega */
+.services-container {
+    display: flex;               /* Flexbox active kiya taaki andar ke cards ek line mein aayein */
+    justify-content: center;     /* Agar cards jagah se kam hon toh bilkul center mein rahein */
+    gap: 30px;                   /* Har ek card ke beech mein 30px ka barabar gap (fasla) */
+    max-width: 1200px;           /* Website agar bohot badi screen par khule toh layout 1200px se bahar na phaile */
+    margin: 0 auto;              /* Poore container ko screen ke bilkul center mein rakhne ka formula */
+    flex-wrap: wrap;             /* AGAR screen choti ho (Mobile) toh cards toot kar khud neeche aa jayein */
+}
+
+/* SINGLE CARD STYLE: Har ek alag dabbe ka design */
+.service-card {
+    background: #f9f9f9;         /* Halka sa gray background taaki card white screen par alag dikhe */
+    border: 1px solid #eeeeee;   /* Card ke baahar halki si khubsoorat border line */
+    padding: 30px 20px;          /* Card ke andar text ko dabbo ki deewaron se door rakhne ke liye padding */
+    border-radius: 10px;         /* Card ke koonay (corners) ko 10px tak gol (round) kiya */
+    flex: 1;                     /* Teeno cards ko screen par bilkul barabar (equal) jagah milegi */
+    min-width: 280px;            /* Mobile par card 280px se chota nahi hoga, balke neeche shift ho jayega */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); /* Card ke neeche halki si professional parchaon (shadow) */
+    
+    /* Neeche wali line transition bohot zaroori hai animation smooth karne ke liye */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease; 
+}
+
+/* HOVER EFFECT: Jab user mouse lekar card ke upar aaye */
+.service-card:hover {
+    transform: translateY(-10px); /* Card halka sa 10px upar ki taraf hawa mein uthega */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Parchao gehri ho jayegi taaki lage card upar uth gaya hai */
+    border-color: #3b82f6;        /* Card ki border ka rang safaid/gray se badal kar blue ho jayega */
+}
+
+/* Icon ka size aur style */
+.card-icon {
+    font-size: 40px;             /* Emoji/Icon ka size bada kiya */
+    margin-bottom: 15px;         /* Icon aur heading ke beech ka gap */
+}
+
+/* Card ke andar ki choti heading */
+.service-card h3 {
+    font-size: 22px;
+    color: #333333;
+    margin-bottom: 12px;         /* Heading aur paragraph ke beech ka gap */
+}
+
+/* Card ke andar ka paragraph (Detail text) */
+.service-card p {
+    font-size: 15px;
+    color: #666666;              /* Halka dark gray rang taaki parhne mein ankhon ko bura na lage */
+    line-height: 1.6;            /* Do lines ke beech ka fasla taaki khichdi na pakay */
+}
     </style>
 <body>
 
