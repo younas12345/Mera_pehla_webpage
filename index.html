@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mera Pehla Webpage</title>
+    <style>
+        body {
+    background-color: #f0f2f5; /* Poore page ka background halka gray kar do */
+    font-family: sans-serif;   /* Text ke fonts ko saaf aur jhatpat parhne wala banao */
+    color: #333333;            /* Text ka rang halka kala (dark gray) karo taaki aankhon ko chubhe nahi */
+    max-width: 600px;          /* Dabbe ki chorai (width) ko 600px par rok do, isse zyada mat phailao */
+    margin: 50px auto;         /* 50px = upar/neeche se jagah chhoro. auto = left/right se jagah barabar baant kar dabbe ko CENTER mein lao */
+    padding: 20px;             /* Dabbe ke andar ki deewaron aur text ke beech mein 20px ka gap (khoorakh) do */
+    background: white;         /* Dabbe ka apna rang white (safaid) kar do */
+    border-radius: 8px;        /* Dabbe ke chaaron koonon (corners) ko thoda sa gol (round) karo */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Dabbe ke peeche halki si parchhai (shadow) do taaki wo screen se upar utha hua lage */
+}
+
+h1 {
+    color: #007bff;            /* Heading ka rang blue (neela) kar do */
+    text-align: center;        /* Heading ke text ko dabbe ke andar bilkul beech (center) mein set karo */
+}
+
+h2 {
+    color: #28a745;            /* Chhoti heading ka rang green (sabz) kar do */
+}
+
+ul {
+    background: #e9ecef;       /* List wale dabbe ka background halka gray karo */
+    padding: 20px 40px;        /* List ke andar upar-neeche 20px aur left-right 40px ki jagah chhoro */
+    border-radius: 5px;        /* List wale dabbe ke koonon ko bhi thoda sa gol karo */
+}
+
+li {
+    margin-bottom: 10px;       /* Har point (line) ke neeche 10px ka fasla do taaki points aapas mein chipke nahi */
+    font-size: 16px;           /* Text ka size thoda bara (16px) kar do */
+}
+
+/* --- BUTTON KI CSS --- */
+button {
+    display: block;            /* Button ko ek poori alag line (block) de do, taaki koi aur cheez iske barabar mein na aaye */
+    width: 100%;               /* Button ki chorai poore dabbe ke barabar (100%) kar do */
+    padding: 12px;             /* Button ko andar se thoda mota aur bara karo taaki click karne mein aasani ho */
+    background-color: #007bff; /* Button ka rang neela (blue) kar do */
+    color: white;              /* Button ke andar likhe hue text ka rang safaid kar do */
+    border: none;              /* Button ki default kaali purani border (lakeer) ko hata do */
+    border-radius: 5px;        /* Button ke koonon ko thoda sa gol karo */
+    font-size: 16px;           /* Button ke andar ka text thoda bara karo */
+    cursor: pointer;           /* Jab user mouse button par laye, toh teer (arrow) ka nishaan haath (hand icon) mein badal jaye */
+    margin-top: 20px;          /* Button ke upar 20px ki khali jagah chhoro taaki wo list se door rahe */
+    font-weight: bold;         /* Button ka text thoda mota (bold) kar do */
+}
+
+button:hover {
+    background-color: #0056b3; /* :hover ka matlab hai jab MAUSE button ke upar aaye, toh rang thoda dark neela kar do (animated feel ke liye) */
+}
+    </style>
+</head>
+<body>
+
+    <!-- Heading: Website ka main title -->
+    <h1 id="main_heading">Assalam-o-Alaikum, Mai Hoon Ek Future Developer!</h1>
+    
+    <!-- Paragraph: Apne baare mein chhota sa intro -->
+    <p>Maine aaj se apna web development ka safar shuru kiya hai apne Senior ke saath. Mera maqsad ek behtareen full-stack developer banna hai.</p>
+
+    <hr> <!-- Yeh ek horizontal line daal dega page par -->
+
+    <!-- Sub-heading -->
+    <h2>Meri Teen Pasandida Cheezein:</h2>
+    
+    <!-- Unordered List: Bullet points wali list -->
+    <ul>
+        <li>Coding seekhna aur naye projects banana</li>
+        <li>Problem-solving aur logical dimag chalana</li>
+        <li>Behtareen aur khoobsurat UI/UX designs dekhna</li>
+    </ul>
+<button id="magicBtn">Mujhe Click Karo!</button>
+<script>
+    // 1. document.getElementById('magicBtn'):
+    // Humne JS ko bola: "Poore HTML page (document) par jao, aur jis element ki ID 'magicBtn' hai use pakad kar 'myButton' naam ke dibbe (variable) mein rakh do."
+    const myButton = document.getElementById('magicBtn');
+    const heading = document.getElementById('main_heading');
+
+    // 2. myButton.addEventListener('click', function() { ... }):
+    // Humne button par ek "kaan" (listener) laga diya. Humne kaha: "Oye button, har waqt sunte raho, jaise hi koi tum par 'click' kare, toh is function ke andar ka kaam फौरन (turant) chala dena."
+    myButton.addEventListener('click', function() {
+        heading.innerText = "Mubarak Ho! Aapne Button Ko Click Kia Hay! 🎉";
+        heading.style.color = '#28a745'; // Heading ka rang green (sabz) kar do jab button click ho jaye 
+        // 3. alert(...):
+        // Yeh browser ka ek built-in order hai jo screen ke upar ek chhota sa popup box (notification) phenk kar marta hai.
+        //alert('Mubarak Ho! Aapka JavaScript ka code bilkul sahi chal gaya hai! 🎉');
+        
+    });
+</script>
+</body>
+</html>
