@@ -13,6 +13,9 @@
     box-shadow: border-box;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+html{
+    scroll-behavior: smooth; /* Jab bhi kisi link par click karke page ke kisi aur hisse par jayein, toh scroll smoothly ho */
+}
 
 body {
     background-color: #c0c6c4; /* Halka sa elegant background color */
@@ -23,7 +26,8 @@ body {
     display: flex;                   /* JADU! Isne Logo aur Links (UL) ko ek hi line mein (baen se daen) khara kar diya */
     justify-content: space-between;  /* Isne Logo ko bilkul left koonay par aur Links ko bilkul right koonay par phenk diya */
     align-items: center;             /* Isne upar aur neeche se dono cheezon ko bilkul beech (center) mein barabar kiya */
-    
+    position: sticky;
+    top: 0;
     background-color: #ffffff;       /* Navbar ka background safaid hoga */
     padding: 15px 30px;              /* Upar-neeche 15px aur left-right 30px ka gap (khoorakh) do */
     box-shadow: 0 2px 10px rgba(0,0,0,0.1); /* Neeche ki taraf ek halke se shadow se premium look aayega */
@@ -239,6 +243,117 @@ Ab apni `style.css` file kholo aur mobile responsive wale hisse (`@media`) ke **
     color: #666666;              /* Halka dark gray rang taaki parhne mein ankhon ko bura na lage */
     line-height: 1.6;            /* Do lines ke beech ka fasla taaki khichdi na pakay */
 }
+
+/* =========================================================================
+   ABOUT SECTION KI CSS STYLING (Glassmorphism 2.0 Style)
+   ========================================================================= */
+
+/* Poore section ka dabba aur background styling */
+.about-section {
+    padding: 80px 20px;          /* Upar-neeche 80px ka bada gap aur left-right 20px */
+    background: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%); /* Halka sa khubsoorat gradient background */
+    overflow: hidden;            /* Agar koi animation baahar nikal rahi ho toh control rahe */
+}
+
+/* MAIN CONTAINER: Dono columns ko barabar line mein rakhne ke liye */
+.about-container {
+    display: flex;               /* Flexbox on kiya taaki content aur visual side-by-side aayein */
+    align-items: center;         /* Dono sides ko vertical height mein bilkul center alignment di */
+    gap: 50px;                   /* Left aur right side ke beech 50px ka faasla */
+    max-width: 1200px;           /* Screen jitni bhi badi ho, layout 1200px se baahar nahi phailay ga */
+    margin: 0 auto;              /* Poore container ko browser window ke center mein lane ka formula */
+    flex-wrap: wrap;             /* Mobile screen par aate hi right side automatically toot kar neeche chali jaye */
+}
+
+/* LEFT COLUMN: Text area ka design */
+.about-content {
+    flex: 1;                     /* Left side ko available screen ki 50% barabar jagah milegi */
+    min-width: 300px;            /* Choti screens par width 300px se kam nahi hogi */
+}
+
+/* Choti sub-heading ka style */
+.about-content .sub-title {
+    font-size: 14px;
+    text-transform: uppercase;   /* Saare alphabets ko bade (CAPITAL) karne ke liye */
+    letter-spacing: 2px;         /* Har lafz ke beech thodi khubsoorat khali jagah */
+    color: #3b82f6;              /* Bright blue rang taaki door se highlight ho */
+    font-weight: bold;
+    display: block;
+    margin-bottom: 10px;
+}
+
+/* Left column ki main heading */
+.about-content h2 {
+    font-size: 36px;
+    color: #1e293b;              /* Dark charcoal rang modern look ke liye */
+    margin-bottom: 20px;
+    line-height: 1.3;
+}
+
+/* Paragraph text ka style */
+.about-content p {
+    font-size: 16px;
+    color: #64748b;              /* Muted slate gray rang taaki parhna asaan ho */
+    line-height: 1.7;            /* Lines ke darmiyan munasib fasla */
+    margin-bottom: 30px;
+}
+
+/* Khubsoorat modern button style */
+.about-btn {
+    display: inline-block;
+    padding: 12px 28px;
+    background-color: #3b82f6;   /* Primary Blue color */
+    color: #ffffff;              /* Safaid text color */
+    text-decoration: none;       /* Link ke neeche wali line hatane ke liye */
+    border-radius: 30px;         /* Button ko side se mukammal gol (pill-shaped) karne ke liye */
+    font-weight: 500;
+    box-shadow: 0 4px 14px rgba(59, 130, 246, 0.4); /* Blue color ki apni halki si shadow */
+    transition: all 0.3s ease;   /* Hover effects ko smooth chalane ke liye */
+}
+
+/* Button par mouse le jaane ka effect */
+.about-btn:hover {
+    background-color: #2563eb;   /* Rang thoda dark blue ho jayega */
+    transform: translateY(-3px); /* Button 3px upar hawa mein uthega */
+    box-shadow: 0 6px 20px rgba(59, 130, 246, 0.6); /* Shadow thodi gehri ho jayegi */
+}
+
+/* RIGHT COLUMN: Glassmorphism visual card ka dabba */
+.about-visual {
+    flex: 1;                     /* Isko bhi screen ki 50% barabar jagah milegi */
+    min-width: 300px;
+    display: flex;
+    justify-content: center;     /* Card ko column ke bilkul center mein rakhne ke liye */
+    align-items: center;
+    background: radial-gradient(circle, #3b82f6 0%, transparent 70%); /* Background mein ek blue light ka jhadka */
+    padding: 40px;
+    border-radius: 20px;
+}
+
+/* Glassmorphism 2.0 Card design */
+.glass-card {
+    background: rgba(255, 255, 255, 0.45); /* Shaffaf (Semi-transparent) safaid background */
+    backdrop-filter: blur(12px); /* Sabse zaroori property! Jo piche ki har cheez ko blurry (sheeshe ki tarah) banati hai */
+    -webkit-backdrop-filter: blur(12px); /* Safari browser ke liye support */
+    border: 1px solid rgba(255, 255, 255, 0.6); /* Glass card ke edges par chamakti hui border line */
+    padding: 40px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1); /* Halka aur soft shadow effect */
+    max-width: 300px;
+}
+
+.glass-card h3 {
+    font-size: 48px;             /* Number ka size kafi bada kiya */
+    color: #1e293b;
+    margin-bottom: 10px;
+}
+
+.glass-card p {
+    font-size: 14px;
+    color: #475569;
+    font-weight: 500;
+}
     </style>
 <body>
 
@@ -247,8 +362,8 @@ Ab apni `style.css` file kholo aur mobile responsive wale hisse (`@media`) ke **
         
         <ul class="nav-links">
             <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Services</a></li>
+            <li><a href="#about-section">About</a></li>
+            <li><a href="#services-section">Services</a></li>
             <li><a href="#">Contact</a></li>
         </ul>
     </nav>
@@ -268,7 +383,7 @@ Ab apni `style.css` file kholo aur mobile responsive wale hisse (`@media`) ke **
         </div>-->
     </header>
 
-    <section class="services-section">
+    <section class="services-section" id="services-section">
     
     <h2 class="section-title">Humari Sahooliyat (Our Services)</h2>
     
@@ -291,6 +406,25 @@ Ab apni `style.css` file kholo aur mobile responsive wale hisse (`@media`) ke **
         </div>
         </div> 
     </section>
+
+    <section class="about-section" id="about-section">
+    
+    <div class="about-container">
+        
+        <div class="about-content">
+            <span class="sub-title">Humare Baaray Mein</span>
+            <h2>Hum Kaam Kaise Karte Hain?</h2>
+            <p>Hum sirf code nahi likhte, balke aapke ideas ko haqeeqat ka roop dete hain. Hamara maqsad bilkul saaf, asaan (KISS formula) aur tezi se chalne wali websytes banana hai taaki aapka business online grow kar sake.</p>
+            
+            <a href="#" class="about-btn">Mazeed Janiye →</a>
+        </div>
+        <div class="about-visual">
+            <div class="glass-card">
+                <h3>3 Saal+</h3>
+                <p>Coding Tajurba & Behtareen Quality</p>
+            </div>
+        </div>
+        </div> </section>
 
 </body>
 </html>
