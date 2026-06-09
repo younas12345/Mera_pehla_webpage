@@ -354,6 +354,108 @@ Ab apni `style.css` file kholo aur mobile responsive wale hisse (`@media`) ke **
     color: #475569;
     font-weight: 500;
 }
+
+/* =========================================================================
+   FOOTER SECTION KI CSS STYLING
+   ========================================================================= */
+
+/* Poore footer ka main dabba (Dark Theme Mix) */
+.main-footer {
+    background-color: #0f172a;   /* Dark slate blue color (Modern Premium Dark look) */
+    color: #94a3b8;              /* Halka gray text taaki dark background par chubhe nahi */
+    padding: 60px 20px 20px 20px;/* Upar 60px taaki content door rahe, baqi sides par 20px */
+}
+
+/* CONTAINER: Saare columns ko ek row mein lane ke liye */
+.footer-container {
+    display: flex;               /* Flexbox on kiya taaki teeno columns side-by-side aayein */
+    justify-content: space-between; /* Columns ke darmiyan barabar ki khali jagah chorne ke liye */
+    gap: 40px;                   /* Columns ke beech ka gap */
+    max-width: 1200px;
+    margin: 0 auto 40px auto;    /* Bottom mein 40px ka margin diya taaki copyright bar se door rahe */
+    flex-wrap: wrap;             /* Tablet/Mobile par columns automatically toot kar neeche shift hon */
+}
+
+/* GENERAL COLUMN STYLE: Har column ko handle karne ke liye */
+.footer-column {
+    flex: 1;                     /* Saare columns ko barabar jagah milegi */
+    min-width: 250px;            /* Choti screens par 250px se kam width nahi hogi */
+}
+
+/* Column 1 (Brand Title) ka style */
+.brand-info h3 {
+    color: #ffffff;              /* Heading ka rang bilkul safaid */
+    font-size: 22px;
+    margin-bottom: 15px;
+}
+
+.brand-info p {
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* Column 2 (Quick Links Heading) ka style */
+.footer-column h4 {
+    color: #ffffff;
+    font-size: 18px;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+/* Links ki list (ul) ko saaf karna */
+.footer-links ul {
+    list-style: none;            /* Bullet points (dots) ko hatane ke liye */
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links ul li {
+    margin-bottom: 10px;         /* Har link ke beech thoda sa vertical gap */
+}
+
+/* Asli anchor tags (links) ka style */
+.footer-links ul li a {
+    color: #94a3b8;
+    text-decoration: none;       /* Underline hatane ke liye */
+    font-size: 15px;
+    transition: color 0.2s ease; /* Hover rang badalne ko smooth karega */
+}
+
+/* Jab user link par mouse laaye */
+.footer-links ul li a:hover {
+    color: #3b82f6;              /* Link ka rang badal kar humara bright blue ho jaye */
+    padding-left: 5px;           /* Halka sa right side par push ho maza dene ke liye */
+    transition: all 0.2s ease;
+}
+
+/* Column 3 (Social Links) ka layout */
+.social-icons {
+    display: flex;
+    gap: 15px;                   /* Icons ke darmiyan gap */
+}
+
+.social-icons a {
+    color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.05); /* Halka sa shaffaf background dabba */
+    padding: 8px 12px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 14px;
+    transition: background 0.3s ease;
+}
+
+/* Social icons par hover effect */
+.social-icons a:hover {
+    background-color: #3b82f6;   /* Pure background blue ho jaye */
+}
+
+/* COPYRIGHT BAR: Sabse aakhir ki patti */
+.footer-bottom {
+    border-top: 1px solid rgba(148, 163, 184, 0.2); /* Footer aur copyright ke beech halki si line */
+    padding-top: 20px;
+    text-align: center;          /* Text center mein rahe */
+    font-size: 13px;
+}
     </style>
 <body>
 
@@ -425,6 +527,40 @@ Ab apni `style.css` file kholo aur mobile responsive wale hisse (`@media`) ke **
             </div>
         </div>
         </div> </section>
+
+        <footer class="main-footer">
+    
+    <div class="footer-container">
+        
+        <div class="footer-column brand-info">
+            <h3>Mera Portfolio</h3>
+            <p>Hum behtareen aur modern web technologies ka istemal karke saaf aur asaan digital products banate hain.</p>
+        </div>
+
+        <div class="footer-column footer-links">
+            <h4>Zaroori Links</h4>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-column footer-social">
+            <h4>Humse Juray Rahein</h4>
+            <div class="social-icons">
+                <a href="#" title="Facebook">🌐 FB</a>
+                <a href="#" title="GitHub">🐙 GH</a>
+                <a href="#" title="LinkedIn">💼 LN</a>
+            </div>
+        </div>
+
+    </div> <div class="footer-bottom">
+        <p>&copy; 2026 Mera Portfolio. All Rights Reserved | Made with ❤️</p>
+    </div>
+
+</footer>
 
 </body>
 </html>
